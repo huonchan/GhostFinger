@@ -4,3 +4,50 @@ composer.phar
 # Commit your application's lock file https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control
 # You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
 # composer.lock
+
+# -------------------------------------------------------------------
+# 1. 依存関係のディレクトリ (必須)
+# -------------------------------------------------------------------
+
+# Node.jsパッケージ管理
+node_modules
+/npm-debug.log*
+yarn-error.log
+
+# Rustのビルド生成物
+# 'target' ディレクトリには、コンパイルされたバイナリと中間ファイルが含まれます。
+src-tauri/target/
+
+# -------------------------------------------------------------------
+# 2. Tauri/Rust 特有のビルドファイル
+# -------------------------------------------------------------------
+
+# Tauriのフロントエンドビルドキャッシュ（Webアプリのビルド先）
+# Tauriがフロントエンドの静的ファイルをビルドした際に出力されるディレクトリ。
+# フロントエンドのフレームワークによって名前が変わります（例：/dist, /build, /out, /public/buildなど）
+# ここでは例として一般的なものを記載していますが、ご自身のプロジェクトに合わせて確認してください。
+/dist/
+/build/
+/out/
+/public/build/
+
+# Tauriが生成する一時ファイルやログ
+src-tauri/tauri-build-temp/
+.tauri/
+*.log
+.DS_Store
+
+# -------------------------------------------------------------------
+# 3. OSとエディタの一時ファイル
+# -------------------------------------------------------------------
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# VS Code
+.vscode/
+
+# IDE files
+*.iml
+.idea/
